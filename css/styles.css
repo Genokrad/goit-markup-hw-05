@@ -105,16 +105,7 @@ body {
   overflow: hidden;
 }
 
-/* ОБЩИЙ ХОВЕР/ФОКУС */
-.navigation-list .navigation-link:hover,
-.navigation-list .navigation-link:focus,
-.contacts-list .contacts-link:hover,
-.contacts-list .contacts-link:focus,
-.address-list .address-link:hover,
-.address-list .address-link:focus {
-  color: var(--accent-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 
 /* ХЕДЕР */
 
@@ -161,6 +152,13 @@ body {
   letter-spacing: 0.02em;
   color: var(--title-text-color);
   padding: 32px 2px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.navigation-list .navigation-link:hover,
+.navigation-list .navigation-link:focus {
+  color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .navigation .active {
@@ -175,7 +173,7 @@ body {
   border-radius: 2px;
   background-color: var(--accent-color);
   position: absolute;
-  bottom: 0;
+  bottom: -1.5px;
   left: 0;
 }
 
@@ -195,6 +193,15 @@ body {
   font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+
+
+.contacts-list .contacts-link:hover,
+.contacts-list .contacts-link:focus {
+  color: var(--accent-color);
+  
 }
 
 .contacts-item {
@@ -205,12 +212,13 @@ body {
   height: 12px;
   margin-right: 10px;
   fill:var(--primary-text-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link:hover .contacts-icon-item-mail,
 .contacts-link:focus .contacts-icon-item-mail {
   fill: var(--accent-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 .contacts-icon-item-phone {
@@ -218,13 +226,13 @@ body {
   height: 16px;
   margin-right: 10px;
   fill:var(--primary-text-color) ;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link:hover .contacts-icon-item-phone,
 .contacts-link:focus .contacts-icon-item-phone {
   fill: var(--accent-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+
 }
 
 .contacts-link {
@@ -324,6 +332,7 @@ body {
 }
 
 /* ЧЕМ МЫ ЗАНИМАЕМСЯ */
+
 .picture-block {
   padding-top: 47px;
   padding-bottom: 94px;
@@ -344,6 +353,29 @@ body {
   flex-wrap: wrap;
   gap: 30px;
 }
+
+.picture-block-wrap {
+  position: relative;
+}
+
+.picture-block-item {
+}
+
+.picture-block-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+  width: 100%;
+  padding: 27px 0;
+}
+
 
 /* НАША КОМАНДА */
 .team-box {
@@ -415,24 +447,25 @@ body {
   height: 44px;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-list-link:hover,
 .team-social-list-link:focus {
   background-color: var(--accent-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-list-icone {
   width: 20px;
   height: 20px;
   fill: #AFB1B8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-list-link:hover .team-social-list-icone,
 .team-social-list-link:focus .team-social-list-icone {
   fill: var(--main-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 /* ПОТРФОЛИО!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -464,6 +497,7 @@ body {
   border-radius: 4px;
   border: 0;
   background-color: var(--team-block-color);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .filter .active-filterr {
@@ -475,8 +509,6 @@ body {
 .filter .button:focus {
   color: var(--main-color);
   background-color: var(--accent-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* НАШИ РАБОТЫ */
@@ -490,6 +522,7 @@ body {
 .works-item {
   /* display: block; */
   /* position: relative; */
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .works-item:hover .works-top-text {
@@ -518,7 +551,7 @@ body {
 .works-item:hover,
 .works-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 .works-img {
@@ -587,24 +620,24 @@ body {
   border-radius: 4px;
   align-items: center;
   justify-content: center;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
 .clients-link:focus {
   border: 1px solid var(--accent-color);
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon {
   fill: #AFB1B8;
   width: 106px;
   height: 60px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover .clients-icon,
 .clients-link:focus .clients-icon {
   fill: var(--accent-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -657,6 +690,12 @@ footer {
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
+  transition: color 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.address-list .address-link:hover,
+.address-list .address-link:focus {
+  color: var(--accent-color);
 }
 
 /* СОЦ СЕТИ */
@@ -692,12 +731,12 @@ footer {
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .invite-link:hover,
 .invite-link:focus {
   background-color: var(--accent-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .invite-icone {
@@ -729,7 +768,6 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  justify-content: flex-end;
   padding: 8px;
   transform: translate(-50%, -50%) scale(1) rotate(360deg);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -748,6 +786,9 @@ footer {
   background-color: var(--main-color);
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }
 .close-icone {
   width: 18px;
